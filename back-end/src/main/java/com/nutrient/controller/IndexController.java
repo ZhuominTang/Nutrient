@@ -12,6 +12,7 @@ public class IndexController {
     public String index(){
         return "index";
     }
+    
     @GetMapping("/hello")
     @ResponseBody
     public String indexTest(){
