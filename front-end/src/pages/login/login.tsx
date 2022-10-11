@@ -1,4 +1,5 @@
-import {FC}from 'react'
+import React,{FC} from 'react';
+import { BrowserRouter, Route } from 'react-router-dom';
 
 const App: FC = () => {
 
@@ -11,4 +12,3 @@ const App: FC = () => {
 }
 
 export default App
-
