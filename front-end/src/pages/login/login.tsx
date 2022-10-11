@@ -1,14 +1,17 @@
 import React,{FC} from 'react';
-import { BrowserRouter, Route } from 'react-router-dom';
 
-const App: FC = () => {
+
+const Login: FC = () => {
 
 
   return (
     <>
-     <div>app</div>
+
+     <div>login</div>
     </>
+
+
   )
 }
 
-export default App
+export default Login
