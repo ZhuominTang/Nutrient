@@ -1,0 +1,29 @@
+.login{
+    .login-header{
+        position: relative;
+        display: flex;
+        background-color: rgba(3, 49, 67, .8);
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+        box-shadow: 0 0 3em rgb(0 0 0);
+        height: auto;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        z-index: 1;
+        .logo{
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            img {
+                width: 676px;
+                height: 183px;
+                margin: 0 15px 0 50px;
+              }
+        }
+    
+    
+    }
+
+}
