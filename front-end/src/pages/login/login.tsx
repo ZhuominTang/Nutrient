@@ -14,7 +14,7 @@ const Login: FC = () => {
 				<header className="login-header">
                     <div className='logo'>
 					<img src={imgURL} alt="logo"></img>
-					<h1>Nutrition Information Management system</h1>
+					<h1>Shaping the Future of Medicine</h1>
                     </div>
 				</header>
 				<section className="login-content">
