@@ -18,14 +18,10 @@ const Login: FC = () => {
                     </div>
 				</header>
 				<section className="login-content">
-					
 					<h2>User Login</h2>
-				
+                    <div>form</div>
 				</section>
 			</div>
-  
-
-
   )
 }
 

@@ -46,5 +46,24 @@
     
     
     }
+    .login-content {
+        background-color: white;
+        height: 30rem;
+        width: 40rem;
+        margin: 7.5rem auto;
+        border-radius: 1rem;
+        padding: 1.5rem 2rem;
+        background-color: rgba(220, 235, 255, .8);
+        h2{
+            margin: 0;
+            margin-bottom: 1em;
+            padding-bottom: 0.3em;
+            color: rgba(3, 49, 67, 1);
+            border-bottom: 1px solid rgba(255, 255, 255, .4);
+            font-size: 2em;
+            font-weight: 800;
+            text-align: center;
+        }
+    }
 
 }
