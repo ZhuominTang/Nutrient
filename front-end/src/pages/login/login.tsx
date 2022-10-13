@@ -1,10 +1,12 @@
 import React,{FC} from 'react';
 import imgURL from '../../assets/images/logo-neg.png';
+import LoginForm from './loginform/loginform';
 import './login.scss';
 
 
 
 const Login: FC = () => {
+
 
 
   return (
@@ -17,10 +19,10 @@ const Login: FC = () => {
 					<h1>Shaping the Future of Medicine</h1>
                     </div>
 				</header>
-				<section className="login-content">
+				<div className="login-content">
 					<h2>User Login</h2>
-                    <div>form</div>
-				</section>
+                    <LoginForm/> 
+				</div>
 			</div>
   )
 }
