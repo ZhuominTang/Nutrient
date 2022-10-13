@@ -48,9 +48,8 @@
     }
     .login-content {
         background-color: white;
-        height: 25rem;
         width: 40rem;
-        margin: 7.5rem auto;
+        margin: 5rem auto;
         border-radius: 1rem;
         padding: 1.5rem 2rem;
         background-color: rgba(220, 235, 255, .8);
@@ -67,7 +66,7 @@
         .loginState{
             display: flex;
             justify-content: flex-end;
-            margin-top: 2rem;
+            margin-top: 3rem;
             color: blue;
             cursor: pointer;
             .loginEntrance{
