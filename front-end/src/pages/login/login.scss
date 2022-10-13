@@ -64,6 +64,17 @@
             font-weight: 800;
             text-align: center;
         }
+        .loginState{
+            display: flex;
+            justify-content: flex-end;
+            margin-top: 2rem;
+            color: blue;
+            cursor: pointer;
+            .loginEntrance{
+                margin-right: 3rem;
+            }
+        }
     }
+
 
 }

@@ -1,13 +1,23 @@
-import React,{FC} from 'react';
+import React,{FC, useState} from 'react';
+import { NavLink } from 'react-router-dom';
 import imgURL from '../../assets/images/logo-neg.png';
-import LoginForm from './loginform/loginform';
+import LoginForm from './loginform/loginForm';
+import RegisterForm from './registerform/registerForm';
 import './login.scss';
+
 
 
 
 const Login: FC = () => {
 
-
+	const [isLogin,setIsLogin] = useState(true);
+	
+	const loginHandler = () =>{
+		setIsLogin(true);
+	}
+	const registerHandler = () =>{
+		setIsLogin(false);
+	}
 
   return (
  
@@ -20,8 +30,15 @@ const Login: FC = () => {
                     </div>
 				</header>
 				<div className="login-content">
-					<h2>User Login</h2>
-                    <LoginForm/> 
+				{isLogin?<h2>User Login</h2>:<h2>User Register</h2>}
+				{isLogin?<LoginForm/> :<RegisterForm/>}
+                    
+				<div className='loginState'>
+					<div className='loginEntrance' onClick={loginHandler} >
+						Login</div>
+					<div className='registerEntrance' onClick={registerHandler} >
+						Register</div>
+					</div>
 				</div>
 			</div>
   )

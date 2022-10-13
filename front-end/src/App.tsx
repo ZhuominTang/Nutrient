@@ -10,6 +10,7 @@ const App: FC = () => {
     <>
     	<BrowserRouter>
 				<Switch>
+				    <Route path="/register" component={login}></Route>
 					<Route path="/login" component={login}></Route>
 					<Route path="/" component={admin}></Route>
 				</Switch>
