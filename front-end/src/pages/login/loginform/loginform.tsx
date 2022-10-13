@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 
+
 const LoginForm = () => {
   const [validated, setValidated] = useState(false);
 
@@ -19,6 +20,7 @@ const LoginForm = () => {
       <Form.Group className="mb-3" controlId="formBasicEmail">
         <Form.Label>Email</Form.Label>
         <Form.Control type="email" placeholder="Enter email" required />
+        
         <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
       </Form.Group>
 
