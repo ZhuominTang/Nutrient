@@ -30,7 +30,7 @@ const LoginForm = () => {
         <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
       </Form.Group>
       <Button variant="primary" type="submit">
-        Submit
+        Log in
       </Button>
     </Form>
   )
