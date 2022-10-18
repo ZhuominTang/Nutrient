@@ -4,8 +4,11 @@ import Button from 'react-bootstrap/Button';
 import './loginForm.scss';
 
 
+
 const LoginForm = () => {
   const [validated, setValidated] = useState(false);
+
+
 
   const handleSubmit = (e : React.FormEvent<HTMLFormElement>) => {
     const form = e.currentTarget;
@@ -15,6 +18,7 @@ const LoginForm = () => {
     }
 
     setValidated(true);
+
   };
   return (
 <Form noValidate validated={validated} onSubmit={handleSubmit}>
