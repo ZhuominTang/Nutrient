@@ -14,6 +14,5 @@ public class MongoTemplateTest {
 
     @Test
     public void testCreateCollection(){
-        mongoTemplate.insert(new User(1,"0071563","Zhangsan","zhangssan@gmail.com"));
     }
 }

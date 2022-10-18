@@ -1,11 +1,9 @@
 package com.nutrient.controller;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
-
 import com.nutrient.pojo.User;
 import com.nutrient.service.UserService;
 import java.time.LocalDateTime;

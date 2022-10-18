@@ -15,6 +15,8 @@ const RegisterForm = () => {
   
       setValidated(true);
     };
+
+  
   return (
     <Form noValidate validated={validated} onSubmit={handleSubmit}>
       <Form.Group className="mb-3" controlId="formBasicEmail">
@@ -43,7 +45,7 @@ const RegisterForm = () => {
         Your password must be 8-20 characters long, contain letters and numbers,
         and must not contain spaces, special characters, or emoji.
       </Form.Text>
-      <Button className="submitButton" variant="primary" type="submit">
+      <Button className="submitButton" variant="primary" type="submit" >
         Register
       </Button>
     </Form>
