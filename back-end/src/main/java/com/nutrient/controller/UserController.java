@@ -16,7 +16,6 @@ public class UserController {
     @Autowired
     private UserService userService;
 
-    @ApiOperation(value = "Register")
     @PostMapping("/register")
     public ResponseEntity<String> addUser(@RequestBody User user) {
         int selective = userService.insertUser(user);

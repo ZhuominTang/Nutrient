@@ -14,5 +14,6 @@ public class MongoTemplateTest {
 
     @Test
     public void testCreateCollection(){
+        System.out.println(mongoTemplate);
     }
 }
