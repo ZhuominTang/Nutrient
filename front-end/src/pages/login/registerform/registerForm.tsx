@@ -3,6 +3,7 @@ import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import './registerForm.scss';
 import { useRegisterUserMutation } from '../../../api/userApi';
+import { User } from '../../../model/user';
 
 const RegisterForm = () => {
     const username = useRef<HTMLInputElement | null>(null);
@@ -17,8 +18,14 @@ const RegisterForm = () => {
         e.preventDefault();
         e.stopPropagation();
       }
+      const user : User = {
+        username: username.current?username.current.value:"",
+        email: username.current?username.current.value:"",
+        password: username.current?username.current.value:"",
+    };
   
       setValidated(true);
+      registerUser(user)
     };
 
   

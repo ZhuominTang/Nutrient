@@ -15,6 +15,10 @@ public class UserService {
 
 
     public int insertUser(User user){
+        if (user.getTimer() == null) {
+            user.setTimer(LocalDateTime.now());
+        }
+        
         try {
             user.setTimer(LocalDateTime.now());
             mongoTemplate.insert(user);

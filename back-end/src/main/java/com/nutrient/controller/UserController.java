@@ -19,10 +19,6 @@ public class UserController {
     @ApiOperation(value = "Register")
     @PostMapping("/register")
     public ResponseEntity<String> addUser(@RequestBody User user) {
-
-        if (user.getTimer() == null) {
-            user.setTimer(LocalDateTime.now());
-        }
         int selective = userService.insertUser(user);
         return ResponseEntity.ok().body(selective == 1 ? "success" : "fall");
     }
