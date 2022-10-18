@@ -13,19 +13,16 @@ const RegisterForm = () => {
 
     const [registerUser,{isSuccess:isRegisterSuccess}] = useRegisterUserMutation();
     const handleSubmit = (e : React.FormEvent<HTMLFormElement>) => {
-      const form = e.currentTarget;
-      if (form.checkValidity() === false) {
-        e.preventDefault();
-        e.stopPropagation();
-      }
-      const user : User = {
+
+      const user  = {
         username: username.current?username.current.value:"",
         email: username.current?username.current.value:"",
         password: username.current?username.current.value:"",
     };
   
-      setValidated(true);
+      
       registerUser(user)
+      e.preventDefault();
     };
 
   

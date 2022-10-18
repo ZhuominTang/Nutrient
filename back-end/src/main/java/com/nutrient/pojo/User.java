@@ -15,7 +15,7 @@ import java.time.LocalDateTime;
 public class User {
 
     @Id
-    private Integer id;
+    private String id;
 
     @Field
     private String password;
