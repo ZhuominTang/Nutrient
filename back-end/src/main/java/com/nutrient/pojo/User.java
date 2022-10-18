@@ -6,6 +6,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import java.time.LocalDateTime;
 
 @Data
 @AllArgsConstructor
@@ -24,4 +25,7 @@ public class User {
 
     @Field
     private String email;
+
+    @Field
+    private LocalDateTime timer;
 }
