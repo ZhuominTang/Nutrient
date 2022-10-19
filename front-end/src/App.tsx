@@ -1,7 +1,7 @@
 import {FC}from 'react'
 import { BrowserRouter, Route,Switch } from 'react-router-dom';
-import login from './components/login/login';
-import admin from './components/admin/admin';
+import loginPage from './pages/login/login';
+import adminPage from './pages/admin/admin';
 
 const App: FC = () => {
 
@@ -10,11 +10,10 @@ const App: FC = () => {
     <>
     	<BrowserRouter>
 				<Switch>
-				    <Route path="/register" component={login}></Route>
-					<Route path="/login" component={login}></Route>
-					<Route path="/" component={admin}></Route>
+					<Route path="/login" component={loginPage}></Route>
+					<Route path="/" component={adminPage}></Route>
 				</Switch>
-			</BrowserRouter>
+		</BrowserRouter>
     </>
   )
 }
