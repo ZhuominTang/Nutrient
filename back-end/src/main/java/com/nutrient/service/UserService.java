@@ -3,7 +3,7 @@ package com.nutrient.service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.stereotype.Service;
-import java.time.LocalDateTime;
+import java.util.Date;
 
 import com.nutrient.pojo.User;
 
@@ -16,11 +16,10 @@ public class UserService {
 
     public int insertUser(User user){
         if (user.getTimer() == null) {
-            user.setTimer(LocalDateTime.now());
+            user.setTimer(new Date());
         }
         
         try {
-            user.setTimer(LocalDateTime.now());
             mongoTemplate.insert(user);
             return 1;
         } catch (Exception e) {

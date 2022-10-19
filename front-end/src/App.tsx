@@ -1,7 +1,7 @@
 import {FC}from 'react'
 import { BrowserRouter, Route,Switch } from 'react-router-dom';
-import login from './pages/login/login';
-import admin from './pages/admin/admin';
+import login from './components/login/login';
+import admin from './components/admin/admin';
 
 const App: FC = () => {
 

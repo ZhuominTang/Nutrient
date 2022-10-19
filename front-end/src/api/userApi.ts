@@ -12,7 +12,7 @@ const userApi = createApi({
             query: (user : User) => ({
               url: `register`,
               method: 'post',
-              body:{user},
+              body:{...user},
               mode:"cors"
             })
     })

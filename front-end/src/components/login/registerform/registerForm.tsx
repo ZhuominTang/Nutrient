@@ -11,7 +11,8 @@ const RegisterForm = () => {
     const password = useRef<HTMLInputElement | null>(null);
     const [validated, setValidated] = useState(false);
 
-    const [registerUser,{isSuccess:isRegisterSuccess}] = useRegisterUserMutation();
+    const [registerUser,{isSuccess:isRegisterSuccess},] = useRegisterUserMutation();
+    
     const handleSubmit = (e : React.FormEvent<HTMLFormElement>) => {
 
       const user  = {
@@ -21,7 +22,8 @@ const RegisterForm = () => {
     };
   
       
-      registerUser(user)
+      console.log(registerUser(user))
+      
       e.preventDefault();
     };
 
