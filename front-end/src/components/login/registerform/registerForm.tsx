@@ -11,21 +11,20 @@ const RegisterForm = () => {
     const password = useRef<HTMLInputElement | null>(null);
     const [validated, setValidated] = useState(false);
 
-    const [registerUser,{isSuccess:isRegisterSuccess},] = useRegisterUserMutation();
+    const [registerUser,{error}] = useRegisterUserMutation();
+
     
     const handleSubmit = (e : React.FormEvent<HTMLFormElement>) => {
-
-      const user  = {
+      e.preventDefault();
+      const user: User  = {
         username: username.current?username.current.value:"",
         email: username.current?username.current.value:"",
         password: username.current?username.current.value:"",
-    };
-  
-      
-      console.log(registerUser(user))
-      
-      e.preventDefault();
-    };
+    };   
+     registerUser(user).then(res =>
+      console.log(res)
+     )
+  };
 
   
   return (
@@ -57,7 +56,8 @@ const RegisterForm = () => {
       <Form.Text id="passwordHelpBlock" muted>
         Your password must be 8-20 characters long, contain letters and numbers,
         and must not contain spaces, special characters, or emoji.
-      </Form.Text>
+      </Form.Text> 
+      <p>{error && JSON.stringify(error.data.message)}</p>
       <Button className="submitButton" variant="primary" type="submit" >
         Register
       </Button>
