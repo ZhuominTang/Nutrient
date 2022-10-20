@@ -16,7 +16,8 @@ public class UserService {
     @Autowired
     private UserDao userDao;
 
-    BCryptPasswordEncoder bcryptPasswordEncoder = new BCryptPasswordEncoder();
+    @Autowired
+    BCryptPasswordEncoder bcryptPasswordEncoder;
 
     public boolean checkUser(User user){
        return userDao.checkUser(user)!=null?true:false;

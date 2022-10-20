@@ -30,14 +30,14 @@ const Login: FC = () => {
                     </div>
 				</header>
 				<div className="login-content">
-				{isLogin?<h2>User Login</h2>:<h2>User Register</h2>}
+				{isLogin?<h2>User Login</h2>:<h2>User Sign up</h2>}
 				{isLogin?<LoginForm/> :<RegisterForm/>}
                     
 				<div className='loginState'>
 					<div className='loginEntrance' onClick={loginHandler} >
-						Login</div>
+						Log in</div>
 					<div className='registerEntrance' onClick={registerHandler} >
-						Register</div>
+						Sign up</div>
 					</div>
 				</div>
 			</div>

@@ -3,8 +3,12 @@ package com.nutrient.controller;
 import org.springframework.http.ResponseEntity;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+
+import com.nutrient.model.JwtResponse;
 import com.nutrient.pojo.User;
 import com.nutrient.service.UserService;
+import com.nutrient.util.JwtUtil;
+
 import org.springframework.http.*;
 
 
@@ -12,6 +16,8 @@ import org.springframework.http.*;
 @RestController
 @RequestMapping("/api/user")
 public class UserController {
+    @Autowired
+    private JwtUtil jwtUtil;
 
     @Autowired
     private UserService userService;
@@ -27,7 +33,10 @@ public class UserController {
     @PostMapping("/login")
     public ResponseEntity<String> loginUser(@RequestBody User user) {
         String message = userService.checkUserAndPassword(user);
-        if(message.equals("Success"))return new ResponseEntity<>("{\"message\": \"Success\"}", HttpStatus.CREATED);
+        if(message.equals("Success")){
+            String token = jwtUtil.newToken(user);
+            return new ResponseEntity<>("{\"jwt\": \"" + token+ "\"}", HttpStatus.CREATED);
+        }
         else return new ResponseEntity<>("{\"message\": \"" + message+ "\"}", HttpStatus.BAD_REQUEST);
      
     }

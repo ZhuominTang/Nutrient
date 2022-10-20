@@ -60,7 +60,7 @@ const RegisterForm = () => {
       </Form.Text> 
       <p>{ error  && (error as RequestError).data?.message}</p>
       <Button className="submitButton" variant="primary" type="submit" >
-        Register
+        Sign up
       </Button>
     </Form>
   )
