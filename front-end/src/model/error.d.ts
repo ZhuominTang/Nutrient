@@ -1,10 +1,9 @@
-export type FetchBaseQueryError =
-  {
-      /**
-       * * `number`:
-       *   HTTP status code
-       */
+export declare type RequestError =
+   {
+   
       status: number
-      data: unknown
+      data: {
+        message:string
+      }
     }
  

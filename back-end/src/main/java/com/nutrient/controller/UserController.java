@@ -18,10 +18,10 @@ public class UserController {
 
     @PostMapping("/register")
     public ResponseEntity<String> addUser(@RequestBody User user) {
-        int selective = userService.insertUser(user);
-      
-    //    return new ResponseEntity<>("{\"message\": \"Success\"}", HttpStatus.CREATED);
-         return new ResponseEntity<>("{\"message\": \"Fail\"}", HttpStatus.BAD_REQUEST);
+        if(userService.checkUser(user))return new ResponseEntity<>("{\"message\": \"Username or Email has been used\"}", HttpStatus.BAD_REQUEST);
+        int selective = userService.insertUser(user);     
+        return selective == 1?new ResponseEntity<>("{\"message\": \"Success\"}", HttpStatus.CREATED)
+         : new ResponseEntity<>("{\"message\": \"Fail\"}", HttpStatus.BAD_REQUEST);
     }
     
 }

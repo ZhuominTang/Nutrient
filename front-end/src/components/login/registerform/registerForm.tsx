@@ -1,18 +1,21 @@
-import React, { useRef,useState }  from 'react'
+import React, { useRef,useState,useEffect }  from 'react'
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import './registerForm.scss';
 import { useRegisterUserMutation } from '../../../api/userApi';
 import { User } from '../../../model/user';
+import { FetchBaseQueryError } from '@reduxjs/toolkit/dist/query'
+import { RequestError } from '../../../model/error';
+
 
 const RegisterForm = () => {
+
     const username = useRef<HTMLInputElement | null>(null);
     const email = useRef<HTMLInputElement | null>(null);
     const password = useRef<HTMLInputElement | null>(null);
     const [validated, setValidated] = useState(false);
 
     const [registerUser,{error}] = useRegisterUserMutation();
-
     
     const handleSubmit = (e : React.FormEvent<HTMLFormElement>) => {
       e.preventDefault();
@@ -25,7 +28,6 @@ const RegisterForm = () => {
       console.log(res)
      )
   };
-
   
   return (
     <Form noValidate validated={validated} onSubmit={handleSubmit}>
@@ -57,7 +59,7 @@ const RegisterForm = () => {
         Your password must be 8-20 characters long, contain letters and numbers,
         and must not contain spaces, special characters, or emoji.
       </Form.Text> 
-      <p>{error && JSON.stringify(error.data.message)}</p>
+      <p>{ error  && (error as RequestError).data?.message}</p>
       <Button className="submitButton" variant="primary" type="submit" >
         Register
       </Button>

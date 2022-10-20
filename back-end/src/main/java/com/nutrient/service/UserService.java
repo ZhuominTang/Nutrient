@@ -1,31 +1,28 @@
 package com.nutrient.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.mongodb.core.MongoTemplate;
-import org.springframework.stereotype.Service;
-import java.util.Date;
 
+import org.springframework.stereotype.Service;
+
+
+import com.nutrient.dao.UserDao;
 import com.nutrient.pojo.User;
 
 @Service
 public class UserService {
 
+
+
     @Autowired
-    private MongoTemplate mongoTemplate;
+    private UserDao userDao;
+
+    public boolean checkUser(User user){
+        return userDao.checkUser(user);
+    }
 
 
     public int insertUser(User user){
-        if (user.getTimer() == null) {
-            user.setTimer(new Date());
-        }
-        
-        try {
-            mongoTemplate.insert(user);
-            return 1;
-        } catch (Exception e) {
-            e.printStackTrace();
-            return -1;
-        }
+        return userDao.insertUser(user);
     }
     
 }
