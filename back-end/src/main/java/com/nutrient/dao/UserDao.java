@@ -24,6 +24,15 @@ public class UserDao {
 
     }
 
+    public User checkUsernameOrEmail(User user){
+        Criteria criteria = new Criteria();
+        criteria.orOperator(Criteria.where("username").is(user.getUsername()),
+        Criteria.where("email").is(user.getUsername()));
+        Query query = new Query(criteria);
+        return mongoTemplate.findOne(query, User.class, COLLECTION_NAME);
+
+    }
+
     public int insertUser(User user){
         if (user.getTimer() == null) {
             user.setTimer(new Date());

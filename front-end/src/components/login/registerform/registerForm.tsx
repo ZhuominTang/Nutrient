@@ -1,10 +1,9 @@
-import React, { useRef,useState,useEffect }  from 'react'
+import React, { useRef,useState }  from 'react'
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import './registerForm.scss';
 import { useRegisterUserMutation } from '../../../api/userApi';
 import { User } from '../../../model/user';
-import { FetchBaseQueryError } from '@reduxjs/toolkit/dist/query'
 import { RequestError } from '../../../model/error';
 
 

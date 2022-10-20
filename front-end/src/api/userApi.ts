@@ -15,13 +15,23 @@ const userApi = createApi({
               body:{...user},
               mode:"cors"
             })
-    })
+        }),
+        loginUser:build.mutation ({
+   
+          query: (user : User) => ({
+            url: `login`,
+            method: 'post',
+            body:{...user},
+            mode:"cors"
+          })
+      }) 
   })
 
 })
 
 export const{
-    useRegisterUserMutation
+    useRegisterUserMutation,
+    useLoginUserMutation
 } = userApi;
 
 export default userApi;

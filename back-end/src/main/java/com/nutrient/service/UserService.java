@@ -23,7 +23,7 @@ public class UserService {
     }
 
     public String checkUserAndPassword(User user){
-        User checkUser = userDao.checkUser(user);
+        User checkUser = userDao.checkUsernameOrEmail(user);
         if(checkUser==null)return "User not found";
         else{
             boolean isMatch = bcryptPasswordEncoder.matches(user.getPassword(),checkUser.getPassword());
