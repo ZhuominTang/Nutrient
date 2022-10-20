@@ -21,8 +21,8 @@ const RegisterForm = () => {
       e.preventDefault();
       const user: User  = {
         username: username.current?username.current.value:"",
-        email: username.current?username.current.value:"",
-        password: username.current?username.current.value:"",
+        email: email.current?email.current.value:"",
+        password: password.current?password.current.value:"",
     };   
      registerUser(user).then(res =>
       console.log(res)

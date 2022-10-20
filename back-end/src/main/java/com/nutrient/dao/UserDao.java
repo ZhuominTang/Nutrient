@@ -15,14 +15,13 @@ public class UserDao {
     @Autowired
     private MongoTemplate mongoTemplate;
 
-    public boolean checkUser(User user){
+    public User checkUser(User user){
         Criteria criteria = new Criteria();
         criteria.orOperator(Criteria.where("username").is(user.getUsername()),
         Criteria.where("email").is(user.getEmail()));
         Query query = new Query(criteria);
-        User queryUser = mongoTemplate.findOne(query, User.class, COLLECTION_NAME);
-        if(queryUser==null)return false;
-        else return true;
+        return mongoTemplate.findOne(query, User.class, COLLECTION_NAME);
+
     }
 
     public int insertUser(User user){
