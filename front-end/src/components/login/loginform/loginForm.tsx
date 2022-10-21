@@ -8,6 +8,7 @@ import { RequestError } from '../../../model/error';
 import { User } from '../../../model/user';
 import { useDispatch } from 'react-redux';
 import { login } from '../../../api/authSlice';
+import { useLocation } from 'react-router';
 
 
 
@@ -22,6 +23,8 @@ const LoginForm = () => {
 
   const [loginUser,{error}] = useLoginUserMutation() ;
   const authDispatch = useDispatch();
+  const location = useLocation()
+  const from = location.state?.preLocation?.pathname || "/"
   
   const handleSubmit = (e : React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -37,7 +40,7 @@ const LoginForm = () => {
           token:res.data.jwt,
           user:res.data.user,
       })) 
-      navigate("/",{replace:true})
+      navigate(from,{replace:true})
     }
     
   })
