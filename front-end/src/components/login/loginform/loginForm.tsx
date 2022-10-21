@@ -22,9 +22,12 @@ const LoginForm = () => {
       username: username.current?username.current.value:"",
       password: password.current?password.current.value:"",
   };   
-  loginUser(user).then(res =>
-    console.log(res)
-   )
+  loginUser(user).then(res => {
+    if('error' in res){
+      console.log(res);
+    }
+    
+  })
 };
 
 
