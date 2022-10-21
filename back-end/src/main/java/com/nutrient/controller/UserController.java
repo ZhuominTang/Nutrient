@@ -40,7 +40,7 @@ public class UserController {
             if (isMatch) {
                 String token = jwtUtil.newToken(user);
                 return new ResponseEntity<>(
-                        "{\"jwt\": \"" + token + "\",\"user\": {\"username\":\"" + checkUser.getUsername() + "\",\"email\":\"" + checkUser.getEmail() + "\"}}",
+                        "{\"jwt\": \"" + token + "\",\"user\": {\"id\":\"" + checkUser.getId() + "\",\"username\":\"" + checkUser.getUsername() + "\",\"email\":\"" + checkUser.getEmail() + "\"}}",
                         HttpStatus.CREATED);
             } else {
                 return new ResponseEntity<>("{\"message\": \"Wrong password\"}", HttpStatus.BAD_REQUEST);

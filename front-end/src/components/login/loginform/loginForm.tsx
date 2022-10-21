@@ -1,6 +1,7 @@
 import React, { useState,useRef } from 'react';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
+import { useNavigate } from 'react-router';
 import './loginForm.scss';
 import { useLoginUserMutation } from '../../../api/userApi';
 import { RequestError } from '../../../model/error';
@@ -11,9 +12,12 @@ import { login } from '../../../api/authSlice';
 
 
 
+
+
 const LoginForm = () => {
   const username = useRef<HTMLInputElement | null>(null);
   const password = useRef<HTMLInputElement | null>(null);
+  const navigate = useNavigate();
   const [validated, setValidated] = useState(false);
 
   const [loginUser,{error}] = useLoginUserMutation() ;
@@ -33,6 +37,7 @@ const LoginForm = () => {
           token:res.data.jwt,
           user:res.data.user,
       })) 
+      navigate("/",{replace:true})
     }
     
   })
