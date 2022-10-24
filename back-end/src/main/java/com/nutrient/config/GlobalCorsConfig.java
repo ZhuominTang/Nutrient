@@ -23,6 +23,7 @@ public class GlobalCorsConfig {
                 .allowCredentials(true)
                 //  Set allowed methods 
                 .allowedMethods("*")
+                .allowedHeaders("*")
                 //  Cross domain allow time 
                 .maxAge(3600);
             }

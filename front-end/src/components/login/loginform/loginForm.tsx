@@ -33,7 +33,6 @@ const LoginForm = () => {
       password: password.current?password.current.value:"",
   };   
   loginUser(user).then(res => {
-    console.log(res)
     if('data' in res){
       
       authDispatch(login({
