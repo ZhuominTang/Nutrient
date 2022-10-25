@@ -4,7 +4,7 @@ import SubMenu from './subMenu/subMenu';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faHome,
-  faBriefcase,
+  faSearch,
   faPaperPlane,
   faQuestion,
   faImage,
@@ -37,9 +37,9 @@ const Sidebar = () => {
           />
 
           <Nav.Item>
-            <Nav.Link href='/'>
-              <FontAwesomeIcon icon={faBriefcase} className="mr-2" />
-              <div className='text'>Profile</div>
+            <Nav.Link href='/search'>
+              <FontAwesomeIcon icon={faSearch} className="mr-2" />
+              <div className='text'>Search</div>
             </Nav.Link>
           </Nav.Item>
 

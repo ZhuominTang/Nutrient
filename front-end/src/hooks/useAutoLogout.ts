@@ -1,8 +1,8 @@
 import { useEffect } from 'react'
 import { useSelector } from 'react-redux';
-import { RootState } from '../../store';
+import { RootState } from '../store';
 import { useDispatch } from 'react-redux';
-import { logout } from '../../api/authSlice';
+import { logout } from '../api/authSlice';
 const UseAutoLogout = () =>{
     const auth = useSelector((state: RootState) => state.auth)
 	const authDispatch = useDispatch();
