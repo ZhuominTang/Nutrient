@@ -9,7 +9,6 @@ import {
   faQuestion,
   faImage,
   faCopy,
-  faTimes
 } from "@fortawesome/free-solid-svg-icons";
 import { Nav} from "react-bootstrap";
 

@@ -14,13 +14,9 @@ const Admin: FC = () => {
     navigate("/login", { replace: true })
   }
   useGetAllNutritionQuery({})
-  const test= () => {
-   
-  }
+
   return (
-    <>
-      <div>admin</div>
-      <Button onClick={test}>Test</Button>     
+    <>  
       <Button onClick={signOut}>Log out</Button>
     </>
   )

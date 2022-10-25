@@ -1,0 +1,21 @@
+.navbar {
+    .container {
+        .navbar-collapse {
+            border-bottom: #ccc 1px solid;
+            padding: 1rem ;
+            .nav-item {
+                margin-left: auto;
+                margin-right: 0;
+                position: relative;
+                .dropdown-menu{
+                    width: 8rem;
+                    min-width:0
+                }
+                .dropdown-menu[data-bs-popper]{
+                    left:-6rem;
+
+                }
+            }
+        }
+    }
+}

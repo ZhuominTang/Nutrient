@@ -1,0 +1,9 @@
+.content{
+    height: 100%;
+    display: flex;
+    .rightSide{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+}
