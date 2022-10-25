@@ -8,8 +8,7 @@ const nutritionApi = createApi({
     {
       baseUrl: server + 'api/nutrition/',
       prepareHeaders: (headers,{getState}) => {
-        const token = (getState() as RootState).auth.token
-        
+        const token = (getState() as RootState).auth.token     
         if(token){
           headers.set('Authorization','Bearer '+token)
           

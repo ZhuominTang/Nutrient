@@ -1,5 +1,5 @@
 import React,{FC} from 'react';
-import Admin from '../../components/admin/admin';
+import Sidebar from '../../components/admin/sidebar/sidebar';
 
 
 const AdminPage: FC = () => {
@@ -7,7 +7,7 @@ const AdminPage: FC = () => {
 
   return (
     <>
-        <Admin></Admin>     
+     <Sidebar></Sidebar>
     </>
   )
 }
