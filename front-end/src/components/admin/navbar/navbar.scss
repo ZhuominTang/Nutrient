@@ -1,8 +1,9 @@
 .navbar {
     .container {
+        width: 100%;
         .navbar-collapse {
             border-bottom: #ccc 1px solid;
-            padding: 1rem ;
+            padding: 0.5rem ;
             .nav-item {
                 margin-left: auto;
                 margin-right: 0;
