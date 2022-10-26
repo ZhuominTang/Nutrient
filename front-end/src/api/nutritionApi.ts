@@ -20,20 +20,22 @@ const nutritionApi = createApi({
     },
   ),
   endpoints: (build) => ({
-    getAllNutrition: build.query({
+    searchNutrition: build.query({
 
-      query: () => ({
-        url: 'all',
+      query(data){
+        const {keyword,pageNo,pageSize} = data
+       return  {
+        url: '/search/'+keyword+"/"+pageNo+"/"+pageSize,
         method: 'get',
         mode: 'cors'
-      })
+      }}
     })
   })
 
 })
 
 export const {
-  useGetAllNutritionQuery
+  useSearchNutritionQuery
 } = nutritionApi;
 
 export default nutritionApi;

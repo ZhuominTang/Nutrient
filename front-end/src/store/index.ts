@@ -1,11 +1,12 @@
 import { configureStore,combineReducers } from "@reduxjs/toolkit";
 import { setupListeners } from "@reduxjs/toolkit/dist/query";
 import userApi from "../api/userApi";
-import { authSlice } from '../api/authSlice';
 import nutritionApi from "../api/nutritionApi";
+import { authSlice } from '../api/authSlice';
+
 const reducer = combineReducers({
-    [userApi.reducerPath]:userApi.reducer,
     [nutritionApi.reducerPath]:nutritionApi.reducer,
+    [userApi.reducerPath]:userApi.reducer,   
     auth:authSlice.reducer
 })
 

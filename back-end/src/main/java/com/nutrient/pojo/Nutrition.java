@@ -1,8 +1,8 @@
 package com.nutrient.pojo;
 
 import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.mapping.Document;
-import org.springframework.data.mongodb.core.mapping.Field;
+import org.springframework.data.elasticsearch.annotations.Document;
+import org.springframework.data.elasticsearch.annotations.Field;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -12,7 +12,7 @@ import java.util.ArrayList;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Document(collection = "food")
+@Document(indexName = "health_test")
 public class Nutrition {
     @Id
     private String id;
@@ -22,7 +22,5 @@ public class Nutrition {
 
     @Field
     private ArrayList<FoodNutrient> foodNutrients;
-
-
 
 }

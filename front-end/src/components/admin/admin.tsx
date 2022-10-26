@@ -3,7 +3,7 @@ import Button from 'react-bootstrap/Button';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router';
 import { logout } from '../../api/authSlice';
-import { useGetAllNutritionQuery } from '../../api/nutritionApi';
+
 
 const Admin: FC = () => {
   const navigate = useNavigate();
@@ -13,7 +13,6 @@ const Admin: FC = () => {
     authDispatch(logout({}))
     navigate("/login", { replace: true })
   }
-  useGetAllNutritionQuery({})
 
   return (
     <>  
