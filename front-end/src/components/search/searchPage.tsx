@@ -1,7 +1,7 @@
 import React from 'react'
-import { useGetAllNutritionQuery } from '../../api/nutritionApi';
+import { useGetAllNutritionQuery } from '../../api/nutritionApi'
 const searchPage = () => {
-    //useGetAllNutritionQuery({}) 
+    useGetAllNutritionQuery({}) 
     return (
         <div>search</div>
     )

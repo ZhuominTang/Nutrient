@@ -1,10 +1,14 @@
-package com.nutrient.dao;
-
-import org.springframework.stereotype.Repository;
-
-import com.nutrient.pojo.Nutrition;
-
+package com.nutrient;
+import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+
+
+
+import com.fasterxml.jackson.databind.ObjectMapper;
+import org.elasticsearch.action.bulk.BulkRequest;
+import org.elasticsearch.action.bulk.BulkResponse;
+import org.elasticsearch.action.index.IndexRequest;
 import org.elasticsearch.action.search.SearchRequest;
 import org.elasticsearch.action.search.SearchResponse;
 import org.elasticsearch.client.RequestOptions;
@@ -16,7 +20,10 @@ import org.elasticsearch.index.query.TermQueryBuilder;
 import org.elasticsearch.search.SearchHit;
 import org.elasticsearch.search.SearchHits;
 import org.elasticsearch.search.builder.SearchSourceBuilder;
+import org.elasticsearch.xcontent.XContentType;
+import org.springframework.stereotype.Service;
 
+import javax.naming.directory.SearchResult;
 import java.io.IOException;
 import java.io.Writer;
 import java.util.ArrayList;
@@ -27,27 +34,29 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
+import org.elasticsearch.client.RestHighLevelClient;
 
-
-@Repository
-public class NutritionDao {
+@SpringBootTest
+public class ElasticSearchTest {
     @Autowired
     private RestHighLevelClient restHighLevelClient;
 
-    private static final String COLLECTION_NAME = "food";
+    @Test
+    public void testCreateCollection(){
+        System.out.println(restHighLevelClient);
+    }
 
-
-    public List<Map<String,Object>> findNutrition(String keyword, int pageNo, int pageSize) throws IOException{
-
+    @Test
+    public List<Map<String,Object>> searchPage(String keyword, int pageNo, int pageSize) throws IOException {
         if(pageNo<1)pageNo=1;
-        pageSize=20;
+
         SearchRequest searchRequest = new SearchRequest("health_test");
         SearchSourceBuilder searchSourceBuilder = new SearchSourceBuilder();
 
-        searchSourceBuilder.from(pageNo);
-        searchSourceBuilder.size(pageSize);
+        searchSourceBuilder.from(1);
+        searchSourceBuilder.size(40);
 
-        TermQueryBuilder termQueryBuilder = QueryBuilders.termQuery("description",keyword);
+        TermQueryBuilder termQueryBuilder = QueryBuilders.termQuery("description","milk");
         searchSourceBuilder.query(termQueryBuilder);
         searchSourceBuilder.timeout(new TimeValue(60, TimeUnit.SECONDS));
 
@@ -60,6 +69,5 @@ public class NutritionDao {
         }
 
         return  list;
-
     }
 }

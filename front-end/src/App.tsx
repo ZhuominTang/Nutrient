@@ -4,7 +4,7 @@ import LoginPage from './pages/login/login';
 import AdminPage from './pages/admin/admin';
 import NeedAuth from './components/needAuth/needAuth';
 import UseAutoLogout from './hooks/useAutoLogout';
-import SearchPage from './components/seach/searchPage';
+import SearchPage from './components/search/searchPage';
 
 
 const App: FC = () => {
