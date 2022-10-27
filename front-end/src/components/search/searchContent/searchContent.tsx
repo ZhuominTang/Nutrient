@@ -19,7 +19,7 @@ const searchContent = (props:Props) => {
 
     return (
         <>
-            
+            <div>{JSON.stringify(data)}</div>
         </>
 
     )
