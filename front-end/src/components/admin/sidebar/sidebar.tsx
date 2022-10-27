@@ -18,7 +18,7 @@ const Sidebar = () => {
   return (
     <div className='sidebar'>
         <div className="sidebar-header">   
-          <h3>Precidiag</h3>
+          <Link to={"/"}><h3>Precidiag</h3></Link>
         </div>
 
         <Nav className="">

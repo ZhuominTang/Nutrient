@@ -1,7 +1,29 @@
-.search{
-    width: 20px;
-}
+.searchForm {
 
-button{
-    width: 20px;
+    display: flex;
+    border: 0.1rem solid #ccc;
+    width: 18rem;
+    border-radius: 0.7rem;
+    margin-left: 8rem;
+    margin-top: 1rem;
+
+    .submitButton {
+        width: 1rem;
+        border: none;
+        outline: none;
+        background-color: #fff;
+    }
+
+    .searchInput {
+       
+
+        margin: 0 1rem;
+       width: 14rem;
+        transition: .3s linear;
+        border: none;
+        outline: none;
+   
+    }
+
+
 }

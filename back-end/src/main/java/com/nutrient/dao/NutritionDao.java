@@ -10,6 +10,7 @@ import org.elasticsearch.action.search.SearchResponse;
 import org.elasticsearch.client.RequestOptions;
 import org.elasticsearch.client.RestHighLevelClient;
 import org.elasticsearch.core.TimeValue;
+import org.elasticsearch.index.query.MatchQueryBuilder;
 import org.elasticsearch.index.query.QueryBuilder;
 import org.elasticsearch.index.query.QueryBuilders;
 import org.elasticsearch.index.query.TermQueryBuilder;
@@ -39,26 +40,27 @@ public class NutritionDao {
 
     public List<Map<String,Object>> findNutrition(String keyword, int pageNo, int pageSize) throws IOException{
 
-        if(pageNo<1)pageNo=1;
+        if(pageNo<0)pageNo=0;
         pageSize=20;
         SearchRequest searchRequest = new SearchRequest("health_test");
         SearchSourceBuilder searchSourceBuilder = new SearchSourceBuilder();
+    searchSourceBuilder.from(pageNo);
+    
+       searchSourceBuilder.size(pageSize);
 
-        searchSourceBuilder.from(pageNo);
-        searchSourceBuilder.size(pageSize);
-
-        TermQueryBuilder termQueryBuilder = QueryBuilders.termQuery("description",keyword);
+        MatchQueryBuilder termQueryBuilder = QueryBuilders.matchQuery("description",keyword);
         searchSourceBuilder.query(termQueryBuilder);
         searchSourceBuilder.timeout(new TimeValue(60, TimeUnit.SECONDS));
 
         searchRequest.source(searchSourceBuilder);
         SearchResponse searchResponse = restHighLevelClient.search(searchRequest, RequestOptions.DEFAULT);
 
-        ArrayList<Map<String ,Object>> list = new ArrayList<>();
+        ArrayList<Map<String ,Object>> list = new ArrayList<>(); 
+        
         for(SearchHit searchHit : searchResponse.getHits().getHits()){
             list.add(searchHit.getSourceAsMap());
         }
-
+        
         return  list;
 
     }

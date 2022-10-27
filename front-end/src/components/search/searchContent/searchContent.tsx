@@ -1,28 +1,27 @@
 import React from 'react'
 import { useSearchNutritionQuery } from '../../../api/nutritionApi'
+import SearchDetail from './searchDetail/searchDetail';
+
 
 interface Props{
     keyword: string
 }
 
-const searchContent = (props:Props) => {
+const SearchContent = (props:Props) => {
 
     const message = {
-        keyword: "cheese",
-        pageNo: 1,
+        keyword: props.keyword,
+        pageNo: 0,
         pageSize: 20
     }
     const {data,isSuccess} = useSearchNutritionQuery(message)
-    if(isSuccess){
-        console.log(data)
-    }
 
     return (
         <>
-            <div>{JSON.stringify(data)}</div>
+            {isSuccess && <SearchDetail data = {data}></SearchDetail>}
         </>
 
     )
 }
 
-export default searchContent
+export default SearchContent

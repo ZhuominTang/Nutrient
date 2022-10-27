@@ -1,12 +1,16 @@
 import React, { useState, useRef } from 'react'
-import Form from 'react-bootstrap/Form';
-import Button from 'react-bootstrap/Button';
 import SearchContent from './searchContent/searchContent';
+import './searchPage.scss'
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faSearch,
+} from "@fortawesome/free-solid-svg-icons";
 
 
 
 
-const searchPage = () => {
+
+const SearchPage = () => {
     const searchWord = useRef<HTMLInputElement | null>(null)
     const [keyword, setKeyword] = useState("")
 
@@ -19,20 +23,20 @@ const searchPage = () => {
     }
     return (
         <>
-            <Form onSubmit={handleSubmit}>
-                <Form.Group className="mb-3" controlId="formBasicEmail">
-                    <Form.Control type="text" placeholder="" required ref={searchWord} />
-                </Form.Group>
+            <form className='searchForm' onSubmit={handleSubmit}>
+                
+                    <input type="text"  placeholder="Search for Food" className='searchInput' ref={searchWord} />
+               
 
 
-                <Button className="submitButton" variant="primary" type="submit">
-                    Search
-                </Button>
-            </Form>
+                <button className="submitButton" type="submit">
+                <FontAwesomeIcon icon={faSearch} className="mr-2" />
+                </button>
+            </form>
             {keyword.length!==0 && <SearchContent keyword={keyword}></SearchContent>}
         </>
 
     )
 }
 
-export default searchPage
+export default SearchPage
