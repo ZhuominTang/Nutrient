@@ -1,4 +1,5 @@
 import React from 'react'
+import Accordion from 'react-bootstrap/esm/Accordion';
 import { Food } from '../../../../model/food';
 import SearchElement from './searchElement';
 
@@ -9,11 +10,11 @@ interface Props {
 const SearchDetail = (prop: Props) => {
   const data = prop.data
   return (
-    <div>
+    <Accordion>
       {data.map((item:Food) =>
         <SearchElement key={item.fdcId} detail = {item}/>
       )}
-    </div>
+    </Accordion>
   )
 }
 

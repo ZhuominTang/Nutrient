@@ -12,7 +12,7 @@ const SearchContent = (props:Props) => {
     const message = {
         keyword: props.keyword,
         pageNo: 0,
-        pageSize: 20
+        pageSize: 12
     }
     const {data,isSuccess} = useSearchNutritionQuery(message)
 

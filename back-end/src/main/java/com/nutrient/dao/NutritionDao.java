@@ -41,7 +41,6 @@ public class NutritionDao {
     public List<Map<String,Object>> findNutrition(String keyword, int pageNo, int pageSize) throws IOException{
 
         if(pageNo<0)pageNo=0;
-        pageSize=20;
         SearchRequest searchRequest = new SearchRequest("health_test");
         SearchSourceBuilder searchSourceBuilder = new SearchSourceBuilder();
     searchSourceBuilder.from(pageNo);
