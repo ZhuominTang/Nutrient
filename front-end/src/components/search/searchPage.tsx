@@ -5,6 +5,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faSearch,
 } from "@fortawesome/free-solid-svg-icons";
+import { useDownloadFileMutation } from '../../api/nutritionApi';
 
 
 
@@ -13,7 +14,7 @@ import {
 const SearchPage = () => {
     const searchWord = useRef<HTMLInputElement | null>(null)
     const [keyword, setKeyword] = useState("")
-
+    const [downloadFile,{error}] = useDownloadFileMutation()
     const handleSubmit = (e : React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         if(searchWord.current && searchWord.current.value.trim().length!==0){
@@ -21,6 +22,12 @@ const SearchPage = () => {
         }
          
     }
+    const handleDownload = () => {
+        let data = ["Milk, whole","Milk, whole"]
+        downloadFile(data).then(r=> {
+        })
+    }
+
     return (
         <>
             <form className='searchForm' onSubmit={handleSubmit}>
@@ -33,6 +40,9 @@ const SearchPage = () => {
                 <FontAwesomeIcon icon={faSearch} className="mr-2" />
                 </button>
             </form>
+            <button className="submitButton" onClick={handleDownload}>
+                <FontAwesomeIcon icon={faSearch} className="mr-2" />
+                </button>
             {keyword.length!==0 && <SearchContent keyword={keyword}></SearchContent>}
         </>
 

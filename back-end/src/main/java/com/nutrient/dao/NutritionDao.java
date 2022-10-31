@@ -27,6 +27,9 @@ import java.util.concurrent.TimeUnit;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import org.springframework.data.mongodb.core.MongoTemplate;
+import org.springframework.data.mongodb.core.query.Criteria;
+import org.springframework.data.mongodb.core.query.Query;
 
 
 
@@ -37,15 +40,39 @@ public class NutritionDao {
 
     private static final String COLLECTION_NAME = "food";
 
+    @Autowired
+    private MongoTemplate mongoTemplate;
+
+    public Nutrition checkNutrition(){
+        Criteria criteria = Criteria.where("description").is("Milk, whole");
+        Query query = new Query(criteria);
+        return mongoTemplate.findOne(query, Nutrition.class, COLLECTION_NAME);
+
+    }
+
+    public Nutrition checkNutritionByDescription(String description){
+        Criteria criteria = Criteria.where("description").is(description);
+        Query query = new Query(criteria);
+        return mongoTemplate.findOne(query, Nutrition.class, COLLECTION_NAME);
+    }
+//"Milk, whole"
+
+
+    public List<Nutrition> getAllNutrition(){
+        Criteria criteria = Criteria.where("description").exists(true);
+        Query query = new Query(criteria);
+        List<Nutrition> list = mongoTemplate.find(query, Nutrition.class, COLLECTION_NAME);
+        return list;
+    }
 
     public List<Map<String,Object>> findNutrition(String keyword, int pageNo, int pageSize) throws IOException{
 
         if(pageNo<0)pageNo=0;
         SearchRequest searchRequest = new SearchRequest("health_test");
         SearchSourceBuilder searchSourceBuilder = new SearchSourceBuilder();
-    searchSourceBuilder.from(pageNo);
+        searchSourceBuilder.from(pageNo);
     
-       searchSourceBuilder.size(pageSize);
+        searchSourceBuilder.size(pageSize);
 
         MatchQueryBuilder termQueryBuilder = QueryBuilders.matchQuery("description",keyword);
         searchSourceBuilder.query(termQueryBuilder);

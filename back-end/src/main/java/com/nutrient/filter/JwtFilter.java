@@ -17,7 +17,7 @@ import java.io.IOException;
 
 import java.util.Date;
 
-@Component
+//@Component
 public class JwtFilter extends OncePerRequestFilter {
 
     private final ObjectMapper mapper;

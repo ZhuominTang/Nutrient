@@ -16,6 +16,6 @@ public class FoodNutrient {
 
     private double amount;
 
-    private ArrayList<Nutrient> nutrient;
+    private Nutrient nutrient;
 
 }
