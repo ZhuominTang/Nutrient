@@ -37,23 +37,23 @@ public class NutritionController {
 
     }
 
-    @GetMapping("/test1")
-    @ResponseBody
-    public List<FoodNutrient> test() {
-        nutritionService.testNutrition();
-        return nutritionService.testNutrition();
+    // @GetMapping("/test1")
+    // @ResponseBody
+    // public List<FoodNutrient> test() {
+    //     nutritionService.testNutrition();
+    //     return nutritionService.testNutrition();
 
-    }
+    // }
 
-    @GetMapping("/test2")
-    @ResponseBody
-    public ResponseEntity<String> test2() {
-        boolean flag = nutritionService.testNutrition2();
-        if (flag)
-            return new ResponseEntity<>("{\"message\": \"Success\"}", HttpStatus.CREATED);
-        else
-            return new ResponseEntity<>("{\"message\": \"Fail\"}", HttpStatus.CREATED);
-    }
+    // @GetMapping("/test2")
+    // @ResponseBody
+    // public ResponseEntity<String> test2() {
+    //     boolean flag = nutritionService.testNutrition2();
+    //     if (flag)
+    //         return new ResponseEntity<>("{\"message\": \"Success\"}", HttpStatus.CREATED);
+    //     else
+    //         return new ResponseEntity<>("{\"message\": \"Fail\"}", HttpStatus.CREATED);
+    // }
 
     @PostMapping("/export")
     public void exportRecord(HttpServletResponse response,@RequestBody List<String> nutrition){
@@ -67,7 +67,7 @@ public class NutritionController {
         deleteFile(tempFile);
 
     } catch (IOException e) {
-        System.out.println("fail");
+        System.out.println(e);
     }
 }
 

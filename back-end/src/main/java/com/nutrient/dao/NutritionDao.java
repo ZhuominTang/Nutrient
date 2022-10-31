@@ -55,7 +55,6 @@ public class NutritionDao {
         Query query = new Query(criteria);
         return mongoTemplate.findOne(query, Nutrition.class, COLLECTION_NAME);
     }
-//"Milk, whole"
 
 
     public List<Nutrition> getAllNutrition(){
