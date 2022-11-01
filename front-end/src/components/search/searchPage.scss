@@ -1,29 +1,76 @@
-.searchForm {
-
+.layout {
     display: flex;
-    border: 0.1rem solid #ccc;
-    width: 18rem;
-    border-radius: 0.7rem;
-    margin-left: 8rem;
-    margin-top: 1rem;
+    height: 100%;
+    width: 100%;
 
-    .submitButton {
-        width: 1rem;
-        border: none;
-        outline: none;
-        background-color: #fff;
+    .searchContent {
+        flex: 4.5;
+        height: 100%;
+        border-right: 0.1rem solid #ccc;
+
+        .searchForm {
+
+            display: flex;
+            border: 0.1rem solid #ccc;
+            width: 18rem;
+            border-radius: 0.7rem;
+            margin-left: 8rem;
+            margin-top: 1rem;
+
+            .submitButton {
+                width: 1rem;
+                border: none;
+                outline: none;
+                background-color: #fff;
+            }
+
+            .searchInput {
+
+
+                margin: 0 1rem;
+                width: 14rem;
+                transition: .3s linear;
+                border: none;
+                outline: none;
+
+            }
+
+
+        }
     }
 
-    .searchInput {
-       
+    .cartContent {
+        flex: 1;
+        width: 100%;
 
-        margin: 0 1rem;
-       width: 14rem;
-        transition: .3s linear;
-        border: none;
-        outline: none;
-   
+        .buttonBar {
+            margin-top: 1rem;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            width: 100%;
+
+            .button {
+                width: 6rem;
+            }
+        }
+
+        .element {
+            border: 0.1rem solid #ccc;
+            display: flex;
+            margin: 1rem;
+            line-height: 2rem;
+            border-radius: 0.5rem;
+
+            .minus {
+                width: 1rem;
+                height: 100%;
+                margin-right: 1rem;
+                margin-left: 1rem;
+                margin-top: auto;
+                margin-bottom: auto;
+                cursor: pointer;
+            }
+        }
     }
-
-
 }
