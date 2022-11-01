@@ -12,6 +12,7 @@ import { useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { RootState } from '../../store';
 import { useDispatch } from 'react-redux';
+import Button from 'react-bootstrap/Button';
 
 import {deleteAllItem, deleteOneItem} from '../../api/selectSlice'
 
@@ -67,8 +68,8 @@ const SearchPage = () => {
             </div>
             <div className='cartContent'>
                 <div className='buttonBar'>
-                    <button onClick={handleDownload} className="button">Download</button>
-                    <button onClick={clearItem} className="button">Clear</button>
+                <Button variant="outline-primary" onClick={handleDownload} className="button">Download</Button>
+                <Button variant="outline-primary" onClick={clearItem} className="button">Clear</Button>
                 </div>
                 {selectArray.map(item => 
                         <div key={item} className='element'>
