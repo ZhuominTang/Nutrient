@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 import com.nutrient.dao.NutritionDao;
 import com.nutrient.pojo.FoodNutrient;
 import com.nutrient.pojo.Nutrition;
+import com.nutrient.pojo.NutritionResponse;
 
 @Service
 public class NutritionService {
@@ -16,7 +17,7 @@ public class NutritionService {
     @Autowired
     private NutritionDao nutritionDao;
 
-    public List<Map<String, Object>> findNutrition(String keyword, int pageNo, int pageSize) {
+    public NutritionResponse findNutrition(String keyword, int pageNo, int pageSize) {
         try {
             return nutritionDao.findNutrition(keyword, pageNo, pageSize);
         } catch (Exception e) {

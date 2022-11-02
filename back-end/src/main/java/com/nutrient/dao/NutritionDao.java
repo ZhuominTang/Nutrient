@@ -3,6 +3,7 @@ package com.nutrient.dao;
 import org.springframework.stereotype.Repository;
 
 import com.nutrient.pojo.Nutrition;
+import com.nutrient.pojo.NutritionResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.elasticsearch.action.search.SearchRequest;
@@ -64,7 +65,7 @@ public class NutritionDao {
         return list;
     }
 
-    public List<Map<String,Object>> findNutrition(String keyword, int pageNo, int pageSize) throws IOException{
+    public NutritionResponse findNutrition(String keyword, int pageNo, int pageSize) throws IOException{
 
         if(pageNo<0)pageNo=0;
         SearchRequest searchRequest = new SearchRequest("health_test");
@@ -79,14 +80,15 @@ public class NutritionDao {
 
         searchRequest.source(searchSourceBuilder);
         SearchResponse searchResponse = restHighLevelClient.search(searchRequest, RequestOptions.DEFAULT);
-
+        NutritionResponse nr = new NutritionResponse();
         ArrayList<Map<String ,Object>> list = new ArrayList<>(); 
         
         for(SearchHit searchHit : searchResponse.getHits().getHits()){
             list.add(searchHit.getSourceAsMap());
         }
-        
-        return  list;
+        nr.setList(list);
+        nr.setLength(searchResponse.getHits().getTotalHits().value);
+        return  nr;
 
     }
 }

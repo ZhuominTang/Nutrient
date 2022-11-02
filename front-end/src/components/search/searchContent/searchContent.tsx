@@ -1,24 +1,40 @@
-import React from 'react'
-import { useSearchNutritionQuery } from '../../../api/nutritionApi'
-import SearchDetail from './searchDetail/searchDetail';
+import React,{useState} from 'react'
+
+import SearchMessage from './searchDetail/searchMessage';
+import { useEffect } from 'react';
+
 
 
 interface Props{
     keyword: string
 }
+interface Message{
+    data:{
+        keyword: string
+        pageNo: number
+        pageSize: number
+    }
+}
 
 const SearchContent = (props:Props) => {
 
-    const message = {
-        keyword: props.keyword,
-        pageNo: 0,
-        pageSize: 12
+   
+    const [message,setMessage] = useState({
+        
+            keyword: props.keyword,
+            pageNo: 0,
+            pageSize: 10
+        
+    });
+
+    const getMessage = (pageNumber : number) =>{
+        let newMessage = Object.assign({},message,{pageNo:(pageNumber-1)*10})
+        setMessage(newMessage)
     }
-    const {data,isSuccess} = useSearchNutritionQuery(message)
 
     return (
         <>
-            {isSuccess && <SearchDetail data = {data}></SearchDetail>}
+                <SearchMessage getMessage={getMessage} data={message}></SearchMessage>
         </>
 
     )
