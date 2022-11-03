@@ -22,12 +22,12 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 ### `1.Use the following URL to install Java 8`
 
-https://www.java.com/en/download/.\
+https://www.java.com/en/download/
 
 
 ### `2.Use the following URL to install Maven`
 
-https://maven.apache.org/download.cgi.\
+https://maven.apache.org/download.cgi
 
 ### `3.Add environment variables in your computer`
 Guide:https://maven.apache.org/install.html
