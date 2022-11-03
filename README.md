@@ -39,7 +39,7 @@ Input `java -version` and `mvn -v` in your terminal to check whether the install
 https://www.mongodb.com/try/download/community
 
 ### `5.Use the following URL to install MongoDB Shell and MongoDB Command Line Database`
-https://www.mongodb.com/try/download/shell
+https://www.mongodb.com/try/download/shell .\
 https://www.mongodb.com/try/download/mongosync
 
 ### `6.Open mongosh shell and your terminal to initialize the data in mongodb`
