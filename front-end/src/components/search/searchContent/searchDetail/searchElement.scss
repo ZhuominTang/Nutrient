@@ -1,9 +1,16 @@
 @use "../../../../style/color.scss" as c;
 .accordion{
+    @media screen and (max-width:1920px){
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+    }
     .accordion-item{
         width:80rem;
         margin: 1rem auto;
         border: #dee2e6 1px solid;
+        @media screen and (max-width:1920px){
+            margin: 0 auto;
+        }
         .accordion-header{
             .icon{
                 border: solid 1px c.$color-main;
