@@ -54,5 +54,15 @@ Close the mongosh shell and open your terminal.
 Go to the project folder. 
 Input `mongoimport -d nutrition -c food --file ./FoodData-mongo.json` to initialize the nutrition data into the database.
 
+### `9.Open your terminal and input command line to run the program`
+
+Input `cd ./back-end` to get into the back-end code folder.
+
+Input `mvn install` to install environment dependencies.
+
+Input `cd ./target` to get into to the target folder \
+and start the application with: \
+`java jar project-1.0-SNAPSHOT.jar`
+
 
 
