@@ -1,8 +1,13 @@
 # Front-end
 
-### `Use the following URL to install the LST version of nodejs`
+### `1.Use the following URL to install the LST version of Node.js`
 
 https://nodejs.org/en/download/
+
+### `2.Open your terminal`
+
+Input `node --version`
+
 ### `npm start`
 
 Runs the app in the development mode.\
