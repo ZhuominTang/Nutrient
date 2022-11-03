@@ -6,7 +6,7 @@ https://nodejs.org/en/download/
 
 ### `2.Open your terminal`
 
-Input `node --version` and `npm --version`.\ 
+Input `node --version` and `npm --version`.\
 Check whether the installation is successful.
 
 Input `cd ./front-end` to get into the front-end code folder.
