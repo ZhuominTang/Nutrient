@@ -13,10 +13,10 @@ interface Props {
 }
 const SearchMessage = (prop: Props) => {
     let contentPerPage = 10
-    const {data,isSuccess} = useSearchNutritionQuery(prop.data)
+    const {data,isSuccess,isLoading} = useSearchNutritionQuery(prop.data)
     return (
         <>
-        {!isSuccess && <div>Error!</div>}
+        {isLoading && <div>IsLoading</div>}
  
         {isSuccess && <SearchDetail data={data.list}></SearchDetail>}
         {(isSuccess && data.list.length!==0) && <Pager    

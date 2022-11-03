@@ -37,3 +37,22 @@ Input `java -version` and `mvn -v` in your terminal to check whether the install
 
 ### `4.Use the following URL to install MongoDB Community Server`
 https://www.mongodb.com/try/download/community
+
+### `5.Use the following URL to install MongoDB Shell and MongoDB Command Line Database`
+https://www.mongodb.com/try/download/shell
+https://www.mongodb.com/try/download/mongosync
+
+### `6.Open mongosh shell and your terminal to initialize the data in mongodb`
+The mongodb URI in this program for now is `mongodb://localhost:27017` 
+
+After you get in mongodb.
+Input `use nutrition` to create the database
+Input `db.createCollection("user")` and `db.createCollection("food")` to create collections
+
+Close the mongosh shell and open your terminal
+
+Go to the project folder 
+Input `mongoimport -d nutrition -c food --file ./FoodData-mongo.json` to initialize the nutrition data into the database.
+
+
+
