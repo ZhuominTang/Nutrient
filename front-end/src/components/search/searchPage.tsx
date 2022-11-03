@@ -32,9 +32,7 @@ const SearchPage = () => {
     const [downloadFile,{error}] = useDownloadFileMutation()
     const handleSubmit = (e : React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-        console.log("searchBegin")
         if(searchWord.current && searchWord.current.value.trim().length!==0){
-            console.log("changeKeyword----"+searchWord.current.value.trim())
             setKeyword(searchWord.current.value.trim())
             dispatch(initPage({}))
         }
@@ -43,7 +41,10 @@ const SearchPage = () => {
     const handleDownload = () => {
         let data = select.selectionArray
         downloadFile(data).then(r=> {
+            dispatch(deleteAllItem({
+            }))
         })
+
     }
     const clearItem = () => {
         dispatch(deleteAllItem({

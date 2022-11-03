@@ -1,3 +1,4 @@
+@use "../../style/color.scss" as c;
 .pagination {
   display: flex;
   align-items: center;
@@ -5,7 +6,7 @@
 
   .paginationItem {
     background: #fff;
-    border: 2px solid #666;
+    border: 2px solid c.$color-main;
     padding: 10px 15px;
     border-radius: 50%;
     height: 45px;
@@ -20,6 +21,11 @@
       left: 50%;
       transform: translate(-50%, -50%);
     }
+
+    &:hover {
+      background-color: c.$color-main;
+      color: #fff;
+    }
   }
 
   .prev,
@@ -27,22 +33,30 @@
     background: #fff;
     border: none;
     padding: 10px;
-    color: blue;
-    box-shadow: 0 0 3px rgba(0, 0, 0, 0.4);
+    color: c.$color-main;
+    border: 2px solid c.$color-main;
     margin: 0 10px;
+    border-radius: 50%;
+    height: 45px;
+    width: 45px;
     cursor: pointer;
+
+    &:hover {
+      background-color: c.$color-main;
+      color: #fff;
+    }
   }
 
   .paginationItem.active {
-    border: 1px solid #888;
-    color: #888;
+    border: 1px solid c.$color-light;
+    color: c.$color-light;
     pointer-events: none;
   }
 
   .prev.disabled,
   .next.disabled {
     pointer-events: none;
-    box-shadow: none;
-    color: #999;
+    border: none;
+    color: c.$color-light;
   }
 }

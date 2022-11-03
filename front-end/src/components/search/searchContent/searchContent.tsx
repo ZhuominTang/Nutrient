@@ -30,9 +30,7 @@ const SearchContent = (props:Props) => {
     },[props.keyword])
 
     const getMessage = (pageNumber : number) =>{
-        console.log("getMessage----"+pageNumber)
         let newMessage = Object.assign({},message,{pageNo:(pageNumber-1)*10})
-        console.log(newMessage)
         setMessage(newMessage)
     }
 

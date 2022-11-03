@@ -1,3 +1,4 @@
+@use"../../style/color" as c; 
 .layout {
     display: flex;
     height: 100%;
@@ -6,12 +7,12 @@
     .searchContent {
         flex: 4.5;
         height: 100%;
-        border-right: 0.1rem solid #ccc;
+        border-right: 0.1rem solid c.$color-light;
 
         .searchForm {
 
             display: flex;
-            border: 0.1rem solid #ccc;
+            border: 0.1rem solid c.$color-light;
             width: 18rem;
             border-radius: 0.7rem;
             margin-left: 8rem;
@@ -54,17 +55,17 @@
                 width: 6rem;
             }
             .btn-outline-primary{
-                color: #313b4c;
-                border-color:#313b4c;
+                color: c.$color-main;
+                border-color:c.$color-main;
                 &:hover{
-                    background-color: #313b4c;
+                    background-color: c.$color-main;
                     color: #fff;
                 }
             }
         }
 
         .element {
-            border: 0.1rem solid #ccc;
+            border: 0.1rem solid c.$color-light;
             display: flex;
             margin: 1rem;
             line-height: 2rem;
@@ -77,14 +78,14 @@
                 margin-top: auto;
                 margin-bottom: auto;
                 cursor: pointer;
-                border: solid 1px #313b4c;
+                border: solid 1px c.$color-main;
                 border-radius: 50%;
                 width : 1rem;
                 height: 1rem;
                 padding: 0.3rem;
                 margin-right: 1rem;
                 &:hover{
-                    background-color: #313b4c;
+                    background-color: c.$color-main;
                     color: #fff ;
                 }
             }

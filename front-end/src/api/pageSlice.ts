@@ -4,7 +4,6 @@ export const pageSlice = createSlice(
     {
         name: "page",
         initialState: () => {
-                console.log("init")
                 return {
                     pageNo:1
                 }                
@@ -20,7 +19,6 @@ export const pageSlice = createSlice(
             },
             initPage(state,action){
                 state.pageNo=1
-                console.log("statusInit="+state.pageNo)
             },
             setPage(state,action){
                 state.pageNo=action.payload.page

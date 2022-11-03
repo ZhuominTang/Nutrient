@@ -22,7 +22,7 @@ const SearchMessage = (prop: Props) => {
         {(isSuccess && data.list.length!==0) && <Pager    
             buttonConst={3}
             contentPerPage={contentPerPage}
-            siblingCount={1}
+            siblingCount={2}
             totalPageCount={Math.ceil(data.length / contentPerPage)}
             getMessage={prop.getMessage}/>}
     </>
