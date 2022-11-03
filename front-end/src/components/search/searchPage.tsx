@@ -7,7 +7,6 @@ import {
   faMinus
 } from "@fortawesome/free-solid-svg-icons";
 import { useDownloadFileMutation } from '../../api/nutritionApi';
-import SearchCart from './searchCart/searchCart';
 import { useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { RootState } from '../../store';
@@ -29,7 +28,7 @@ const SearchPage = () => {
     useEffect(() => {
         setSelectArray(select.selectionArray)
     },[select])
-    const [downloadFile,{error}] = useDownloadFileMutation()
+    const [downloadFile] = useDownloadFileMutation()
     const handleSubmit = (e : React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         if(searchWord.current && searchWord.current.value.trim().length!==0){

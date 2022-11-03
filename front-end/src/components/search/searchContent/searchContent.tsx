@@ -8,13 +8,7 @@ import { useEffect } from 'react';
 interface Props{
     keyword: string
 }
-interface Message{
-    data:{
-        keyword: string
-        pageNo: number
-        pageSize: number
-    }
-}
+
 
 const SearchContent = (props:Props) => {
     const [message,setMessage] = useState({
@@ -27,7 +21,7 @@ const SearchContent = (props:Props) => {
     useEffect(()=>{
         let newMessage = Object.assign({},message,{keyword:props.keyword,pageNo:0})
         setMessage(newMessage)
-    },[props.keyword])
+    },[props.keyword,message])
 
     const getMessage = (pageNumber : number) =>{
         let newMessage = Object.assign({},message,{pageNo:(pageNumber-1)*10})
