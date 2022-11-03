@@ -17,8 +17,6 @@ interface Message{
 }
 
 const SearchContent = (props:Props) => {
-
-   
     const [message,setMessage] = useState({
         
             keyword: props.keyword,
@@ -26,9 +24,15 @@ const SearchContent = (props:Props) => {
             pageSize: 10
         
     });
+    useEffect(()=>{
+        let newMessage = Object.assign({},message,{keyword:props.keyword,pageNo:0})
+        setMessage(newMessage)
+    },[props.keyword])
 
     const getMessage = (pageNumber : number) =>{
+        console.log("getMessage----"+pageNumber)
         let newMessage = Object.assign({},message,{pageNo:(pageNumber-1)*10})
+        console.log(newMessage)
         setMessage(newMessage)
     }
 

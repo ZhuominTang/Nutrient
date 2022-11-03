@@ -1,5 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { usePaginationRange, DOTS } from "../../hooks/usePaginationRange";
+import { useDispatch,useSelector } from 'react-redux';
+import { RootState } from '../../store';
+import { nextPage,previousPage,setPage } from "../../api/pageSlice";
+import "./pager.scss"
 interface Prop {
 
     buttonConst: number,
@@ -20,9 +24,15 @@ const Pager = (
         getMessage
     }: Prop
 ) => {
-
-    const [currentPage, setCurrentPage] = useState(1);
-
+    
+    const page = useSelector((state: RootState) => state.page)
+    const [currentPage, setCurrentPage] = useState(page.pageNo);
+    console.log("currentPageNo----------"+page.pageNo)
+    console.log("currentPage----------"+currentPage)
+    const dispatch = useDispatch()
+    useEffect(()=>{
+      setCurrentPage(page.pageNo)
+    },[page.pageNo])
     const paginationRange = usePaginationRange({
         totalPageCount,
         contentPerPage,
@@ -30,29 +40,25 @@ const Pager = (
         siblingCount,
         currentPage,
       });
-
+   
       function goToNextPage() {
-        setCurrentPage((page) => page + 1);
-        getMessage(currentPage)
+        dispatch(nextPage({}))        
+        getMessage(currentPage+1)
       }
       function gotToPreviousPage() {
-        setCurrentPage((page) => page - 1);
-        getMessage(currentPage)
+        dispatch(previousPage({}))
+        getMessage(currentPage-1)
       }
       function changePage(event:React.MouseEvent<HTMLButtonElement>) {
         const pageNumber = Number(event.currentTarget.innerText);
-        setCurrentPage(pageNumber);
-        getMessage(currentPage)
+        dispatch(setPage({page:pageNumber}))
+        getMessage(pageNumber)
       }
 
     
       return (
         <div>
 
-          {/* show the pagiantion
-                    it consists of next and previous buttons
-                    along with page numbers, in our case, 5 page
-                    numbers at a time */}
           <div className="pagination">
             {/* previous button */}
             <button

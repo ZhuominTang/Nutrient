@@ -15,24 +15,28 @@ import { useDispatch } from 'react-redux';
 import Button from 'react-bootstrap/Button';
 
 import {deleteAllItem, deleteOneItem} from '../../api/selectSlice'
-
+import { initPage } from '../../api/pageSlice';
 
 
 const SearchPage = () => {
+    
     const select = useSelector((state: RootState) => state.select)
     const searchWord = useRef<HTMLInputElement | null>(null)
     const [keyword, setKeyword] = useState("")
 
     const [selectArray, setSelectArray] = useState<string[]>([])
-    const sliceDispatch = useDispatch()
+    const dispatch = useDispatch()
     useEffect(() => {
         setSelectArray(select.selectionArray)
     },[select])
     const [downloadFile,{error}] = useDownloadFileMutation()
     const handleSubmit = (e : React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
+        console.log("searchBegin")
         if(searchWord.current && searchWord.current.value.trim().length!==0){
+            console.log("changeKeyword----"+searchWord.current.value.trim())
             setKeyword(searchWord.current.value.trim())
+            dispatch(initPage({}))
         }
          
     }
@@ -42,13 +46,14 @@ const SearchPage = () => {
         })
     }
     const clearItem = () => {
-        sliceDispatch(deleteAllItem({
+        dispatch(deleteAllItem({
         }))
     }
     const deleteOneElement = (item:any) => {
-        sliceDispatch(deleteOneItem({
+        dispatch(deleteOneItem({
             name : item
         }))
+        
     }
     return (
         <>
