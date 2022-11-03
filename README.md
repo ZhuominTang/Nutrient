@@ -62,7 +62,7 @@ Input `mvn install` to install environment dependencies.
 
 Input `cd ./target` to get into to the target folder 
 and start the application with: \
-`java jar project-1.0-SNAPSHOT.jar`
+`java -jar project-1.0-SNAPSHOT.jar`
 
 
 
