@@ -4,7 +4,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
-import com.nutrient.model.JwtResponse;
+
 import com.nutrient.pojo.User;
 import com.nutrient.service.UserService;
 import com.nutrient.util.JwtUtil;

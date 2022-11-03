@@ -7,19 +7,18 @@ import com.nutrient.pojo.FoodNutrient;
 import com.nutrient.pojo.Nutrition;
 import com.nutrient.service.NutritionService;
 
-import org.springframework.http.ResponseEntity;
 
 import java.io.File;
 import java.io.IOException;
 import java.nio.charset.Charset;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
+
 
 import javax.servlet.http.HttpServletResponse;
 import com.nutrient.pojo.NutritionResponse;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.*;
+
 
 @RestController
 @RequestMapping("/api/nutrition")
