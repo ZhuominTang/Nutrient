@@ -21,7 +21,7 @@ const SearchContent = (props:Props) => {
     useEffect(()=>{
         let newMessage = Object.assign({},message,{keyword:props.keyword,pageNo:0})
         setMessage(newMessage)
-    },[props.keyword,message])
+    },[props.keyword])
 
     const getMessage = (pageNumber : number) =>{
         let newMessage = Object.assign({},message,{pageNo:(pageNumber-1)*10})
