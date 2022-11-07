@@ -13,6 +13,7 @@ public class MongodbConfig {
    return MongoClients.create("mongodb://localhost:27017");
 
     }
+    
 
     @Bean
     public MongoTemplate mongoTemplate() {

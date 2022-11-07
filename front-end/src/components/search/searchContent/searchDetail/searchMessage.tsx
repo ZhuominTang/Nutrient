@@ -18,6 +18,7 @@ const SearchMessage = (prop: Props) => {
         <>
         {isLoading && <div>IsLoading</div>}
  
+ 
         {isSuccess && <SearchDetail data={data.list}></SearchDetail>}
         {(isSuccess && data.list.length!==0) && <Pager    
             buttonConst={3}
