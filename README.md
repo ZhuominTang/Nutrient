@@ -40,7 +40,7 @@ https://www.mongodb.com/try/download/community
 
 ### `5.Use the following URL to install MongoDB Shell and MongoDB Command Line Database`
 https://www.mongodb.com/try/download/shell \
-https://www.mongodb.com/try/download/mongosync
+https://www.mongodb.com/try/download/database-tools
 
 ### `6.Open mongosh shell and your terminal to initialize the data in mongodb`
 The mongodb URI in this program for now is `mongodb://localhost:27017` 
