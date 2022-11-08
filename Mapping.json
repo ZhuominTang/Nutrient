@@ -1,0 +1,50 @@
+{
+  "mappings":{
+  "properties": {
+    "foodClass": {
+      "type": "text"
+    },
+    "description": {
+      "type": "text"
+    },
+    "foodNutrients": {
+      "type": "object"
+    },
+    "foodAttributes": {
+      "type": "object"
+    },
+    "foodCode": {
+      "type": "text"
+    },
+    "startDate": {
+      "type": "text"
+    },
+    "endDate": {
+      "type": "text"
+    },
+    "wweiaFoodCategory": {
+      "type": "object"
+    },
+    "fdcId": {
+      "type": "integer"
+    },
+    "dataType": {
+      "type": "keyword"
+    },
+    "publicationDate": {
+      "type": "text"
+    },
+    "inputFoods": {
+      "type": "object"
+    },
+    "foodPortions": {
+      "properties": {
+          "gramWeight": {
+            "type": "long"
+          }
+        }
+    }
+  
+  }
+ }
+}
