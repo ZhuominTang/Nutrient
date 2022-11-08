@@ -63,9 +63,13 @@ Guide:https://www.elastic.co/guide/en/elasticsearch/reference/7.17/starting-elas
 
 ### `9.Open your terminal to initialize the data in Elasticsearch`
 For windows, please use Git Bash.\
+
 The Elasticsearch URI in this program for now is `http://127.0.0.1:9200/` \
+
 Go to the project folder. \
-Input `curl -X PUT "http://127.0.0.1:9200/health_test" -H 'Content-Type: application/json' --data-binary @Mapping.json` to create the .
+
+Input `curl -X PUT "http://127.0.0.1:9200/health_test" -H 'Content-Type: application/json' --data-binary @Mapping.json` to create the database.\
+
 Input `curl -X PUT "http://127.0.0.1:9200/health_test/_bulk" -H 'Content-Type: application/json' --data-binary @FoodData-ES.json` to initialize the nutrition data into the database.
 
 
