@@ -6,7 +6,7 @@ https://nodejs.org/en/download/
 
 ### `2.Open your terminal`
 
-Input `node --version` and `npm --version`.\
+Input `node --version` and `npm --version`.
 
 Check whether the installation is successful.
 
@@ -46,15 +46,15 @@ https://www.mongodb.com/try/download/database-tools
 ### `6.Open mongosh shell and your terminal to initialize the data in mongodb`
 The mongodb URI in this program for now is `mongodb://localhost:27017` 
 
-After you get in mongodb.\
+After you get in mongodb.
 
-Input `use nutrition` to create the database.\
+Input `use nutrition` to create the database.
 
 Input `db.createCollection("user")` and `db.createCollection("food")` to create collections.
 
 Close the mongosh shell and open your terminal.
 
-Go to the project folder. \
+Go to the project folder. 
 
 Input `mongoimport -d nutrition -c food --file ./FoodData-mongo.json` to initialize the nutrition data into the database.
 
@@ -66,13 +66,13 @@ or https://www.elastic.co/guide/en/elasticsearch/reference/7.17/install-elastics
 Guide:https://www.elastic.co/guide/en/elasticsearch/reference/7.17/starting-elasticsearch.html
 
 ### `9.Open your terminal to initialize the data in Elasticsearch`
-For windows, please use Git Bash.\
+For windows, please use Git Bash.
 
-The Elasticsearch URI in this program for now is `http://127.0.0.1:9200/` \
+The Elasticsearch URI in this program for now is `http://127.0.0.1:9200/` 
 
-Go to the project folder. \
+Go to the project folder. 
 
-Input `curl -X PUT "http://127.0.0.1:9200/health_test" -H 'Content-Type: application/json' --data-binary @Mapping.json` to create the database.\
+Input `curl -X PUT "http://127.0.0.1:9200/health_test" -H 'Content-Type: application/json' --data-binary @Mapping.json` to create the database.
 
 Input `curl -X PUT "http://127.0.0.1:9200/health_test/_bulk" -H 'Content-Type: application/json' --data-binary @FoodData-ES.json` to initialize the nutrition data into the database.
 
