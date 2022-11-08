@@ -41,5 +41,4 @@ const TopNavbar = () => {
         </Navbar>
     )
 }
-
 export default TopNavbar
