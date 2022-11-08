@@ -7,6 +7,7 @@ https://nodejs.org/en/download/
 ### `2.Open your terminal`
 
 Input `node --version` and `npm --version`.\
+
 Check whether the installation is successful.
 
 Input `cd ./front-end` to get into the front-end code folder.
@@ -46,12 +47,15 @@ https://www.mongodb.com/try/download/database-tools
 The mongodb URI in this program for now is `mongodb://localhost:27017` 
 
 After you get in mongodb.\
+
 Input `use nutrition` to create the database.\
+
 Input `db.createCollection("user")` and `db.createCollection("food")` to create collections.
 
 Close the mongosh shell and open your terminal.
 
-Go to the project folder. 
+Go to the project folder. \
+
 Input `mongoimport -d nutrition -c food --file ./FoodData-mongo.json` to initialize the nutrition data into the database.
 
 ### `7.Use the following URL to install Elasticsearch 7.17.5`
