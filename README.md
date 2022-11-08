@@ -95,6 +95,6 @@ In the main page, click search in the sidebar to get in the search page and star
 
 <img src="./MainPage.png" title="Main page" alt="Main page"/>
 <img src="./Search.jpg" title="Search" alt="Search"/>
-<img src="./Export.png" title="Export" alt="Export"/>
+
 
 
