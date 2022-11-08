@@ -66,7 +66,7 @@ or https://www.elastic.co/guide/en/elasticsearch/reference/7.17/install-elastics
 Guide:https://www.elastic.co/guide/en/elasticsearch/reference/7.17/starting-elasticsearch.html
 
 ### `9.Open your terminal to initialize the data in Elasticsearch`
-For windows, please use Git Bash.
+On windows, please use Git Bash.
 
 The Elasticsearch URI in this program for now is `http://127.0.0.1:9200/` 
 
