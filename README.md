@@ -87,5 +87,10 @@ Input `cd ./target` to get into to the target folder
 and start the application with: \
 `java -jar project-1.0-SNAPSHOT.jar`
 
+# How to run the program
+
+Now there is a simple login system. You can register a user at will and log in , and the user information will be stored in mongodb.
+
+In the main page, click search in the sidebar to get in the search page and start to find the nutrition data.
 
 
