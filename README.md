@@ -93,4 +93,6 @@ Now there is a simple login system. You can register a user at will and log in ,
 
 In the main page, click search in the sidebar to get in the search page and start to find the nutrition data.
 
+<img src="./MainPage.png" title="Main page" alt="Main page"/>
+
 
