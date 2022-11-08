@@ -54,6 +54,13 @@ Close the mongosh shell and open your terminal.
 Go to the project folder. 
 Input `mongoimport -d nutrition -c food --file ./FoodData-mongo.json` to initialize the nutrition data into the database.
 
+### `7.Use the following URL to install Elasticsearch 7.17.5`
+https://www.elastic.co/downloads/past-releases/elasticsearch-7-17-5
+or https://www.elastic.co/guide/en/elasticsearch/reference/7.17/install-elasticsearch.html
+
+### `8.Start Elasticsearch service`
+Guide:https://www.elastic.co/guide/en/elasticsearch/reference/7.17/starting-elasticsearch.html
+
 ### `9.Open your terminal and input command line to run the program`
 
 Input `cd ./back-end` to get into the back-end code folder.
