@@ -41,8 +41,7 @@ const LoginForm = () => {
           user:res.data.user,
       })) 
       navigate(from,{replace:true})
-    }
-    
+    }  
   })
 };
 
